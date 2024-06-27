@@ -1,37 +1,46 @@
-import React from "react";
 import { contactInfos } from "../data/ContactInfos";
+import { Button, Card, Divider, Tooltip, Typography, message } from "antd";
+const { Text } = Typography;
+
 export const ContactInfo = () => {
+    const [messageApi, contextHolder] = message.useMessage();
+
+    const HandleCopy = (value: string) => {
+        navigator.clipboard.writeText(value);
+        messageApi.success("Copied to clipboard");
+    };
+
     return (
-        <div className="flex flex-col rounded-lg bg-stone-100 px-4 py-6 w-full gap-3 ">
-            {contactInfos.map((contactInfo) => (
-                <>
-                    <div
-                        key={contactInfo.name}
-                        className="flex gap-3 items-center"
-                    >
-                        <div className="bg-white p-3 shadow-md rounded-lg hover:ring-4 transition-all duration-300">
-                            {contactInfo.icon}
-                        </div>
-                        <div className="">
-                            <div className="pb-1 ">
-                                <p className="text-gray-600 text-sm">
-                                    {contactInfo.name}
-                                </p>
+        <>
+            {contextHolder}
+            <Card className="w-full">
+                <div className="flex flex-col gap-3">
+                    {contactInfos.map((contactInfo) => (
+                        <>
+                            <div className="flex flex-row gap-3 items-center">
+                                <Tooltip title={"Copy"}>
+                                    <Button
+                                        icon={contactInfo.icon}
+                                        size={"large"}
+                                        onClick={() =>
+                                            HandleCopy(contactInfo.value)
+                                        }
+                                    />
+                                </Tooltip>
+                                <div className="flex flex-col">
+                                    <Text type="secondary">
+                                        {contactInfo.name}
+                                    </Text>
+                                    <Text>{contactInfo.value}</Text>
+                                </div>
                             </div>
-                            <div className="">
-                                <p className="font-semibold">
-                                    {contactInfo.value}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    {contactInfos.length !== contactInfo.key && (
-                        <div className="flex justify-center">
-                            <span className="bg-gray-500 w-full h-[1px] opacity-30"></span>
-                        </div>
-                    )}
-                </>
-            ))}
-        </div>
+                            {contactInfos.length !== contactInfo.key && (
+                                <Divider className="my-[2px]" />
+                            )}
+                        </>
+                    ))}
+                </div>
+            </Card>
+        </>
     );
 };

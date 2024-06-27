@@ -1,29 +1,30 @@
-import avatar from "../assets/avatar.jpg";
+import avatar from "../assets/avatar.png";
 import { SocialNetwork } from "./SocialNetwork";
 import { ContactInfo } from "./ContactInfo";
+import { Button, Image } from "antd";
+import { Typography } from "antd";
+import { Download } from "lucide-react";
+const { Title } = Typography;
 export const SideBar = () => {
     return (
-        <div className="w-[450px] bg-white p-10 rounded-xl flex flex-col gap-3 items-center">
-            <div className="w-40 h-40 overflow-hidden rounded-xl">
-                <img
-                    src={avatar}
-                    alt=""
-                    className="w-full h-full object-cover"
-                />
-            </div>
-            <div className="text-center">
-                <h1 className="text-xl font-bold mt-4 font-mono">John Doe</h1>
-            </div>
-            <div className="bg-stone-100 px-4 py-2 font-mono font-bold rounded-lg">
-                Web Developper
-            </div>
+        <div className="w-[450px] bg-white p-10 rounded-xl flex flex-col gap-5 items-center">
+            <Image
+                width={160}
+                height={160}
+                src={avatar}
+                className="rounded-xl"
+            />
+            <Title level={2} className="!m-0">
+                John Doe
+            </Title>
+            <Title level={5} className="!my-0">
+                Software Developer
+            </Title>
             <SocialNetwork />
             <ContactInfo />
-            <div className="mt-4">
-                <button className="px-6 py-3 bg-blue-600 text-white text-lg font-bold rounded-lg hover:text-black hover:bg-white hover:ring-4 transition-all duration-300">
-                    Download CV
-                </button>
-            </div>
+            <Button type="primary" icon={<Download />} size="large">
+                Download
+            </Button>
         </div>
     );
 };
