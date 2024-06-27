@@ -9,7 +9,7 @@ export const SocialNetwork = () => {
                     href={socialNetwork.url}
                     target="_blank"
                     rel="noreferrer"
-                    className="bg-gray-100 p-2 rounded-md hover:bg-blue-600 transition-all"
+                    className="bg-stone-100 p-2 rounded-md hover:bg-white hover:ring-4 transition-all duration-300 "
                 >
                     <span className="hover:fill-white">
                         {socialNetwork.icon}

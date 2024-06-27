@@ -2,14 +2,14 @@ import React from "react";
 import { contactInfos } from "../data/ContactInfos";
 export const ContactInfo = () => {
     return (
-        <div className="flex flex-col rounded-lg bg-gray-100 px-4 py-6 w-full gap-3">
+        <div className="flex flex-col rounded-lg bg-stone-100 px-4 py-6 w-full gap-3 ">
             {contactInfos.map((contactInfo) => (
                 <>
                     <div
                         key={contactInfo.name}
                         className="flex gap-3 items-center"
                     >
-                        <div className="bg-white p-3 shadow-md rounded-lg">
+                        <div className="bg-white p-3 shadow-md rounded-lg hover:ring-4 transition-all duration-300">
                             {contactInfo.icon}
                         </div>
                         <div className="">
