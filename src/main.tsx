@@ -1,16 +1,18 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { App } from './App.tsx'
-import './index.css'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { App } from "./App.tsx";
+import "./index.css";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { NotFound } from "./pages/NotFound.tsx";
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: (
-            <App />
-        ),
-
+        element: <App />,
+    },
+    {
+        path: "/*",
+        element: <NotFound />,
     },
 ]);
 
