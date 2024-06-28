@@ -1,6 +1,6 @@
 import { contactInfos } from "../data/ContactInfos";
 import { Button, Card, Divider, Tooltip, Typography, message } from "antd";
-const { Text } = Typography;
+const { Text, Paragraph } = Typography;
 
 export const ContactInfo = () => {
     const [messageApi, contextHolder] = message.useMessage();
@@ -13,7 +13,7 @@ export const ContactInfo = () => {
     return (
         <>
             {contextHolder}
-            <Card className="w-full">
+            <Card className="w-full max-w-[400px]">
                 <div className="flex flex-col gap-3">
                     {contactInfos.map((contactInfo) => (
                         <>
@@ -27,11 +27,18 @@ export const ContactInfo = () => {
                                         }
                                     />
                                 </Tooltip>
-                                <div className="flex flex-col">
+                                <div className="flex flex-col w-full">
                                     <Text type="secondary">
                                         {contactInfo.name}
                                     </Text>
-                                    <Text>{contactInfo.value}</Text>
+                                    <Paragraph
+                                        ellipsis={{
+                                            rows: 1,
+                                            suffix: "",
+                                        }}
+                                    >
+                                        {contactInfo.value}
+                                    </Paragraph>
                                 </div>
                             </div>
                             {contactInfos.length !== contactInfo.key && (
