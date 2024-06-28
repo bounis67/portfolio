@@ -11,25 +11,25 @@ export const NavBars: NavBarsType[] = [
     {
         key: 1,
         name: "About",
-        icon: <Info size={32} />,
-        link: "/about",
+        icon: <Info size={25} />,
+        link: "/",
     },
     {
         key: 2,
         name: "Skills",
-        icon: <Code size={32} />,
+        icon: <Code size={25} />,
         link: "/projects",
     },
     {
         key: 3,
         name: "Blog",
-        icon: <Book size={32} />,
+        icon: <Book size={25} />,
         link: "/blog",
     },
     {
         key: 4,
         name: "Contact",
-        icon: <Mail size={32} />,
+        icon: <Mail size={25} />,
         link: "/contact",
     },
 ];

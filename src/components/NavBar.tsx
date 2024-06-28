@@ -9,7 +9,7 @@ export const NavBar = () => {
         console.log(Location);
     }, [Location]);
     return (
-        <nav className=" flex flex-col p-6 rounded-xl bg-white gap-5 transition-all">
+        <nav className=" flex flex-col p-4 rounded-xl bg-white gap-5 transition-all">
             {NavBars.map((nav) => {
                 const IsLocation = Location.pathname === nav.link;
                 return (

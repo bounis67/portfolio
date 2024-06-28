@@ -1,4 +1,4 @@
-import { Mail, MapPinned, Smartphone } from "lucide-react";
+import { Calendar, Mail, MapPinned, Smartphone } from "lucide-react";
 
 type ContactInfoType = {
     key: number;
@@ -24,5 +24,11 @@ export const contactInfos: ContactInfoType[] = [
         name: "Address",
         icon: <MapPinned strokeWidth={3} size={20} />,
         value: "1 rue de la paix",
+    },
+    {
+        key: 4,
+        name: "Birthday",
+        icon: <Calendar />,
+        value: "12/12/2005",
     },
 ];
