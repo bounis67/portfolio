@@ -20,12 +20,14 @@ export const ContactInfo = () => {
                             <div className="flex flex-row gap-3 items-center">
                                 <Tooltip title={"Copy"}>
                                     <Button
-                                        icon={contactInfo.icon}
                                         size={"large"}
                                         onClick={() =>
                                             HandleCopy(contactInfo.value)
                                         }
-                                    />
+                                        className="!px-2 !py-1"
+                                    >
+                                        {contactInfo.icon}
+                                    </Button>
                                 </Tooltip>
                                 <div className="flex flex-col w-full">
                                     <Text type="secondary">
@@ -36,6 +38,7 @@ export const ContactInfo = () => {
                                             rows: 1,
                                             suffix: "",
                                         }}
+                                        className="!m-0"
                                     >
                                         {contactInfo.value}
                                     </Paragraph>

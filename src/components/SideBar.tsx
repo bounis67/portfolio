@@ -7,7 +7,7 @@ import { Download } from "lucide-react";
 const { Title } = Typography;
 export const SideBar = () => {
     return (
-        <div className="w-11/12 md:w-2/3 lg:w-[350px] bg-white p-10 rounded-xl flex flex-col gap-5 items-center ">
+        <div className="w-11/12 md:w-2/3 lg:w-[350px] bg-white py-10 px-5 rounded-xl flex flex-col gap-5 items-center  ">
             <Image
                 src={avatar}
                 className="rounded-xl"
