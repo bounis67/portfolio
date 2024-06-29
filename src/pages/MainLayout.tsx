@@ -1,19 +1,20 @@
-import { SideBar } from "../components/SideBar";
 import backgroundImage from "../assets/background.jpg";
 import { NavBar } from "../components/NavBar";
+import { SideBar } from "../components/SideBar";
 import { Affix, Typography } from "antd";
+
 const { Text } = Typography;
 export const MainLayout = () => {
     const affix = 10;
     return (
         <div
-            className="h-ful w-full flex justify-center items-start bg-cover bg-center bg-no-repeat bg-fixed gap-16 pt-[7%]"
+            className="h-ful flex w-full items-start justify-center gap-16 bg-cover bg-fixed bg-center bg-no-repeat pt-[7%]"
             style={{ backgroundImage: `url(${backgroundImage})` }}
         >
             <Affix offsetTop={affix}>
                 <SideBar />
             </Affix>
-            <main className=" bg-white w-3/6 rounded-xl ">
+            <main className="w-3/6 rounded-xl bg-white">
                 <Text className="text-9xl">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Odio aut vero nihil similique sunt aliquid sint adipisci

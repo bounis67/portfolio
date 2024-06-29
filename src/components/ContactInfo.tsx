@@ -1,5 +1,6 @@
 import { contactInfos } from "../data/ContactInfos";
 import { Button, Card, Divider, Tooltip, Typography, message } from "antd";
+
 const { Text, Paragraph } = Typography;
 
 export const ContactInfo = () => {
@@ -17,7 +18,7 @@ export const ContactInfo = () => {
                 <div className="flex flex-col gap-3">
                     {contactInfos.map((contactInfo) => (
                         <>
-                            <div className="flex flex-row gap-3 items-center">
+                            <div className="flex flex-row items-center gap-3">
                                 <Tooltip title={"Copy"}>
                                     <Button
                                         size={"large"}
@@ -29,7 +30,7 @@ export const ContactInfo = () => {
                                         {contactInfo.icon}
                                     </Button>
                                 </Tooltip>
-                                <div className="flex flex-col w-full">
+                                <div className="flex w-full flex-col">
                                     <Text type="secondary">
                                         {contactInfo.name}
                                     </Text>

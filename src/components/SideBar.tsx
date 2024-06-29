@@ -1,13 +1,14 @@
 import avatar from "../assets/avatar.png";
-import { SocialNetwork } from "./SocialNetwork";
 import { ContactInfo } from "./ContactInfo";
+import { SocialNetwork } from "./SocialNetwork";
 import { Button, Image } from "antd";
 import { Typography } from "antd";
 import { Download } from "lucide-react";
+
 const { Title } = Typography;
 export const SideBar = () => {
     return (
-        <div className="w-11/12 md:w-2/3 lg:w-[350px] bg-white py-10 px-5 rounded-xl flex flex-col gap-5 items-center  ">
+        <div className="flex w-11/12 flex-col items-center gap-5 rounded-xl bg-white px-5 py-10 md:w-2/3 lg:w-[350px]">
             <Image
                 src={avatar}
                 className="rounded-xl"

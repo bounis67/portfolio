@@ -1,10 +1,4 @@
-import {
-    Facebook,
-    Instagram,
-    Linkedin,
-    LucideFacebook,
-    Twitter,
-} from "lucide-react";
+import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 
 type SocialNetworkType = {
     icon: JSX.Element;
@@ -13,7 +7,7 @@ type SocialNetworkType = {
 };
 export const socialNetworks: SocialNetworkType[] = [
     {
-        icon: <LucideFacebook />,
+        icon: <Facebook />,
         name: "Facebook",
         url: "https://www.facebook.com/",
     },

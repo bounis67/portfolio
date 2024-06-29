@@ -1,5 +1,5 @@
-import { Button, Tooltip } from "antd";
 import { socialNetworks } from "../data/socialNetworks";
+import { Button, Tooltip } from "antd";
 
 export const SocialNetwork = () => {
     return (
