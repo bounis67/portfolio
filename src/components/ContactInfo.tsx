@@ -1,25 +1,31 @@
 import { contactInfos } from "../data/ContactInfos";
 import { Button, Card, Divider, Tooltip, Typography, message } from "antd";
+import { useState } from "react";
 
 const { Text, Paragraph } = Typography;
 
 export const ContactInfo = () => {
     const [messageApi, contextHolder] = message.useMessage();
+    const [tooltipCopy, setTooltipCopy] = useState<string>("Copy");
 
     const HandleCopy = (value: string) => {
+        setTooltipCopy("Copied");
         navigator.clipboard.writeText(value);
+        setTimeout(() => {
+            setTooltipCopy("Copy");
+        }, 3000);
         messageApi.success("Copied to clipboard");
     };
 
     return (
         <>
             {contextHolder}
-            <Card className="w-full max-w-[400px]">
+            <Card className="w-full">
                 <div className="flex flex-col gap-3">
                     {contactInfos.map((contactInfo) => (
                         <>
                             <div className="flex flex-row items-center gap-3">
-                                <Tooltip title={"Copy"}>
+                                <Tooltip title={tooltipCopy}>
                                     <Button
                                         size={"large"}
                                         onClick={() =>
