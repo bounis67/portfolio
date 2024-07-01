@@ -1,22 +1,20 @@
 import "./index.css";
-import { MainLayout } from "./pages/MainLayout.tsx";
+import { About } from "./pages/About";
+import { MainLayout } from "./pages/MainLayout";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <MainLayout />,
-    },
-    {
-        path: "/*",
-        element: <MainLayout />,
-    },
-]);
+// Import modifié ici
 
 ReactDOM.createRoot(document.getElementById("root")!)?.render(
     <React.StrictMode>
-        <RouterProvider router={router} />
+        <BrowserRouter>
+            <Routes>
+                <Route path="/*" element={<MainLayout />}>
+                    <Route path="*" element={<About />} />
+                </Route>
+            </Routes>
+        </BrowserRouter>
     </React.StrictMode>,
 );
