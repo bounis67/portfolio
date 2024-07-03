@@ -32,7 +32,7 @@ export const MainLayout = () => {
             style={{ backgroundImage: `url(${backgroundImage})` }}
             ref={ref}
         >
-            {mainDivWidth > 1024 ? (
+            {mainDivWidth > 1230 ? (
                 <Affix offsetTop={10}>
                     <SideBar />
                 </Affix>

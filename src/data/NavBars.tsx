@@ -18,7 +18,7 @@ export const NavBars: NavBarsType[] = [
         key: 2,
         name: "Skills",
         icon: <Code size={25} />,
-        link: "/projects",
+        link: "/skills",
     },
     {
         key: 3,
