@@ -42,11 +42,10 @@ export const MainLayout = () => {
             <main className="w-11/12 rounded-xl bg-white px-5 py-10 lg:w-3/6">
                 <Outlet />
             </main>
-            {mainDivWidth > 1024 && (
-                <Affix offsetTop={10}>
-                    <NavBar />
-                </Affix>
-            )}
+
+            <Affix offsetTop={10}>
+                <NavBar mainDivWidth={mainDivWidth} />
+            </Affix>
         </div>
     );
 };
