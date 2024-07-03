@@ -1,5 +1,6 @@
 import "./index.css";
 import { About } from "./pages/About";
+import { Contact } from "./pages/Contact";
 import { MainLayout } from "./pages/MainLayout";
 import { Skills } from "./pages/Skills";
 import React from "react";
@@ -14,6 +15,7 @@ ReactDOM.createRoot(document.getElementById("root")!)?.render(
             <Routes>
                 <Route path="*" element={<MainLayout />}>
                     <Route path="skills" element={<Skills />} />
+                    <Route path="Contact" element={<Contact />} />
                     <Route path="*" element={<About />} />
                 </Route>
             </Routes>
