@@ -1,53 +1,29 @@
-import { Button, Form, Input } from "antd";
+import { contactData } from "../data/ContactData";
+import { Button, Typography } from "antd";
 import React from "react";
 
-const formItemLayout = {
-    labelCol: {
-        xs: { span: 24 },
-        sm: { span: 6 },
-    },
-    wrapperCol: {
-        xs: { span: 24 },
-        sm: { span: 14 },
-    },
-};
+const { Title, Text } = Typography;
 
 export const Contact: React.FC = () => (
-    <Form {...formItemLayout} variant="filled" style={{ maxWidth: 600 }}>
-        <Form.Item
-            label="First Name"
-            name="firstName"
-            rules={[{ required: true, message: "Please enter the first name" }]}
-        >
-            <Input />
-        </Form.Item>
-        <Form.Item
-            label="Last Name"
-            name="lastName"
-            rules={[{ required: true, message: "Please enter the last name" }]}
-        >
-            <Input />
-        </Form.Item>
+    <div className="flex flex-col items-center justify-center gap-5">
+        <div>
+            <Title className="text-center">Contact Me</Title>
+            <Text className="text-center">
+                You can contact me about anything, and I'll get back to you as
+                soon as possible. Suggestions are also welcome.
+            </Text>
 
-        <Form.Item
-            label="Email"
-            name="email"
-            rules={[{ required: true, message: "Please enter the email" }]}
-        >
-            <Input />
-        </Form.Item>
-
-        <Form.Item label="Object" name="object" rules={[{ required: true }]}>
-            <Input />
-        </Form.Item>
-
-        <Form.Item label="Message" name="message" rules={[{ required: true }]}>
-            <Input.TextArea />
-        </Form.Item>
-        <Form.Item wrapperCol={{ offset: 6, span: 16 }}>
-            <Button type="primary" htmlType="submit">
-                Submit
-            </Button>
-        </Form.Item>
-    </Form>
+            <div className="flex w-full flex-col gap-3">
+                {contactData.map((data) => (
+                    <div key={data.name}>
+                        <label htmlFor={data.name}>{data.label}:</label>
+                        {data.component}
+                    </div>
+                ))}
+                <div>
+                    <Button type="primary">Send</Button>
+                </div>
+            </div>
+        </div>
+    </div>
 );
