@@ -22,9 +22,9 @@ export const NavBars: NavBarsType[] = [
     },
     {
         key: 3,
-        name: "Blog",
+        name: "Works",
         icon: <Book size={25} />,
-        link: "/blog",
+        link: "/works",
     },
     {
         key: 4,
