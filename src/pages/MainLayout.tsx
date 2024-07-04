@@ -28,11 +28,11 @@ export const MainLayout = () => {
 
     return (
         <div
-            className="flex h-full w-full flex-col items-center justify-center gap-16 bg-cover bg-fixed bg-center bg-no-repeat py-[7%] lg:flex-row lg:items-start"
+            className="flex h-full w-full flex-col items-center justify-center gap-5 bg-cover bg-fixed bg-center bg-no-repeat py-[5%] lg:flex-row lg:items-start"
             style={{ backgroundImage: `url(${backgroundImage})` }}
             ref={ref}
         >
-            {mainDivWidth > 1230 ? (
+            {mainDivWidth >= 1024 ? (
                 <Affix offsetTop={10}>
                     <SideBar />
                 </Affix>

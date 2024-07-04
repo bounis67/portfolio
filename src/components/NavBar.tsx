@@ -11,7 +11,7 @@ export const NavBar = ({ mainDivWidth }: { mainDivWidth: number }) => {
 
     return (
         <>
-            {mainDivWidth < 1230 && (
+            {mainDivWidth <= 1024 && (
                 <FloatButton
                     className="top-5 transition-all"
                     icon={
@@ -25,7 +25,7 @@ export const NavBar = ({ mainDivWidth }: { mainDivWidth: number }) => {
                 />
             )}
             <nav
-                className={`flex flex-col gap-5 rounded-xl bg-white p-4 transition-all ${mainDivWidth < 1230 && (IsOpen ? "fixed right-5 top-20 drop-shadow-2xl" : "hidden")}`}
+                className={`flex flex-col gap-5 rounded-xl bg-white p-4 transition-all ${mainDivWidth <= 1024 && (IsOpen ? "fixed right-5 top-20 drop-shadow-2xl" : "hidden")}`}
             >
                 {NavBars.map((nav) => {
                     const IsLocation = Location.pathname === nav.link;
