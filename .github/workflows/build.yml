@@ -4,10 +4,10 @@ name: Verify and Dev
 on:
     push:
         branches:
-            - main
+            - release
     pull_request:
         branches:
-            - main
+            - release
 
 jobs:
     verify_and_dev:
