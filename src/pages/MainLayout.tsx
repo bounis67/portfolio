@@ -1,7 +1,7 @@
 import backgroundImage from "../assets/background.jpg";
 import { NavBar } from "../components/NavBar";
 import { SideBar } from "../components/SideBar";
-import { Affix } from "antd";
+import { Affix, ConfigProvider } from "antd";
 import { useEffect, useRef, useState } from "react";
 import { Outlet } from "react-router-dom";
 
@@ -27,25 +27,29 @@ export const MainLayout = () => {
     }, []);
 
     return (
-        <div
-            className="flex h-full w-full flex-col items-center justify-center gap-5 bg-cover bg-fixed bg-center bg-no-repeat py-[5%] lg:flex-row lg:items-start"
-            style={{ backgroundImage: `url(${backgroundImage})` }}
-            ref={ref}
+        <ConfigProvider
+            theme={{ token: { fontFamily: "SFUIText, sans-serif" } }}
         >
-            {mainDivWidth >= 1024 ? (
-                <Affix offsetTop={10}>
+            <div
+                className="flex h-full w-full flex-col items-center justify-center gap-5 bg-cover bg-fixed bg-center bg-no-repeat py-[5%] lg:flex-row lg:items-start"
+                style={{ backgroundImage: `url(${backgroundImage})` }}
+                ref={ref}
+            >
+                {mainDivWidth >= 1024 ? (
+                    <Affix offsetTop={10}>
+                        <SideBar />
+                    </Affix>
+                ) : (
                     <SideBar />
-                </Affix>
-            ) : (
-                <SideBar />
-            )}
-            <main className="w-11/12 rounded-xl bg-white p-10 lg:w-3/6">
-                <Outlet />
-            </main>
+                )}
+                <main className="w-11/12 rounded-xl bg-white p-10 lg:w-3/6">
+                    <Outlet />
+                </main>
 
-            <Affix offsetTop={10}>
-                <NavBar mainDivWidth={mainDivWidth} />
-            </Affix>
-        </div>
+                <Affix offsetTop={10}>
+                    <NavBar mainDivWidth={mainDivWidth} />
+                </Affix>
+            </div>
+        </ConfigProvider>
     );
 };
