@@ -22,11 +22,11 @@ jobs:
               with:
                   node-version: "18"
 
-            - name: Install dependencies
+            - name: Install
               run: npm install
 
-            - name: Run verify script
+            - name: Verify
               run: npm run verify
 
-            - name: Run dev script
-              run: npm run dev
+            - name: Build
+              run: npm run build
