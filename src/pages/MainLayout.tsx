@@ -42,7 +42,7 @@ export const MainLayout = () => {
                 ) : (
                     <SideBar />
                 )}
-                <main className="w-11/12 rounded-xl bg-white p-10 lg:w-3/6">
+                <main className="w-11/12 overflow-hidden rounded-xl bg-white p-10 transition-all lg:w-3/6">
                     <Outlet />
                 </main>
 

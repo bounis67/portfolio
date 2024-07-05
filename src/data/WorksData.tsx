@@ -6,6 +6,7 @@ export interface WorksType {
     img: string;
     url: string;
     tags: string[];
+    id: number;
 }
 
 interface FilterType {
@@ -19,6 +20,7 @@ export const worksData: WorksType[] = [
         img: faker.image.url(),
         url: "https://github.com",
         tags: ["react", "typescript", "tailwindcss"],
+        id: 1,
     },
 ];
 
@@ -29,6 +31,7 @@ for (let i = 0; i < 10; i++) {
         img: faker.image.url(),
         url: faker.internet.url(),
         tags: [faker.lorem.word(), faker.lorem.word(), faker.lorem.word()],
+        id: i + 2,
     });
 }
 
