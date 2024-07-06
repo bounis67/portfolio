@@ -1,7 +1,8 @@
-import backgroundImage from "../assets/background.jpg";
+import { BackgroundColor } from "../components/BackgroundColor";
 import { NavBar } from "../components/NavBar";
 import { SideBar } from "../components/SideBar";
 import { Affix, ConfigProvider } from "antd";
+import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { Outlet } from "react-router-dom";
 
@@ -27,29 +28,52 @@ export const MainLayout = () => {
     }, []);
 
     return (
-        <ConfigProvider
-            theme={{ token: { fontFamily: "SFUIText, sans-serif" } }}
-        >
-            <div
-                className="flex h-full w-full flex-col items-center justify-center gap-5 bg-cover bg-fixed bg-center bg-no-repeat py-[5%] lg:flex-row lg:items-start"
-                style={{ backgroundImage: `url(${backgroundImage})` }}
-                ref={ref}
+        <>
+            <BackgroundColor />
+            <ConfigProvider
+                theme={{ token: { fontFamily: "SFUIText, sans-serif" } }}
             >
-                {mainDivWidth >= 1024 ? (
-                    <Affix offsetTop={10}>
-                        <SideBar />
-                    </Affix>
-                ) : (
-                    <SideBar />
-                )}
-                <main className="w-11/12 overflow-hidden rounded-xl bg-white p-10 transition-all lg:w-3/6">
-                    <Outlet />
-                </main>
-
-                <Affix offsetTop={10}>
-                    <NavBar mainDivWidth={mainDivWidth} />
-                </Affix>
-            </div>
-        </ConfigProvider>
+                <div
+                    className="!z-10 flex h-full w-full flex-col items-center justify-center gap-5 bg-black bg-cover bg-fixed bg-center bg-no-repeat py-[5%] lg:flex-row lg:items-start"
+                    ref={ref}
+                >
+                    {mainDivWidth >= 1024 ? (
+                        <motion.div
+                            initial={{ x: -1000, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            transition={{ duration: 1 }}
+                            style={{ zIndex: "inherit" }}
+                        >
+                            <Affix offsetTop={10} className="">
+                                <SideBar />
+                            </Affix>
+                        </motion.div>
+                    ) : (
+                        <div
+                            style={{ zIndex: "inherit" }}
+                            className="flex justify-center"
+                        >
+                            <SideBar />
+                        </div>
+                    )}
+                    <main
+                        className="w-11/12 overflow-hidden rounded-xl bg-white p-10 transition-all lg:w-3/6"
+                        style={{ zIndex: "inherit" }}
+                    >
+                        <Outlet />
+                    </main>
+                    <motion.div
+                        initial={{ x: 1000, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 1 }}
+                        style={{ zIndex: "inherit" }}
+                    >
+                        <Affix offsetTop={10}>
+                            <NavBar mainDivWidth={mainDivWidth} />
+                        </Affix>
+                    </motion.div>
+                </div>
+            </ConfigProvider>
+        </>
     );
 };

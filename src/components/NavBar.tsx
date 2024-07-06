@@ -50,7 +50,7 @@ export const NavBar = ({ mainDivWidth }: { mainDivWidth: number }) => {
                 />
             )}
             <motion.nav
-                className={`flex w-max flex-col gap-5 overflow-hidden rounded-xl bg-white p-4 ${mainDivWidth <= 1024 ? "fixed right-7 top-16 shadow-2xl" : ""}`}
+                className={`z-20 flex w-max flex-col gap-5 overflow-hidden rounded-xl bg-white p-4 ${mainDivWidth <= 1024 ? "fixed right-7 top-16 shadow-2xl" : ""}`}
                 variants={AnimationNav}
                 initial="hidden"
                 animate={IsOpen ? "visible" : "hidden"}
