@@ -2,7 +2,6 @@ import { BackgroundColor } from "../components/BackgroundColor";
 import { NavBar } from "../components/NavBar";
 import { SideBar } from "../components/SideBar";
 import { Affix, ConfigProvider } from "antd";
-import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { Outlet } from "react-router-dom";
 
@@ -38,16 +37,11 @@ export const MainLayout = () => {
                     ref={ref}
                 >
                     {mainDivWidth >= 1024 ? (
-                        <motion.div
-                            initial={{ x: -1000, opacity: 0 }}
-                            animate={{ x: 0, opacity: 1 }}
-                            transition={{ duration: 1 }}
-                            style={{ zIndex: "inherit" }}
-                        >
+                        <div style={{ zIndex: "inherit" }}>
                             <Affix offsetTop={10} className="">
                                 <SideBar />
                             </Affix>
-                        </motion.div>
+                        </div>
                     ) : (
                         <div
                             style={{ zIndex: "inherit" }}
@@ -62,16 +56,11 @@ export const MainLayout = () => {
                     >
                         <Outlet />
                     </main>
-                    <motion.div
-                        initial={{ x: 1000, opacity: 0 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        transition={{ duration: 1 }}
-                        style={{ zIndex: "inherit" }}
-                    >
+                    <div style={{ zIndex: "inherit" }}>
                         <Affix offsetTop={10}>
                             <NavBar mainDivWidth={mainDivWidth} />
                         </Affix>
-                    </motion.div>
+                    </div>
                 </div>
             </ConfigProvider>
         </>
