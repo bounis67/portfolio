@@ -37,7 +37,7 @@ export const ContactInfo = () => {
                                     </Button>
                                 </Tooltip>
                                 <div className="flex w-full flex-col">
-                                    <Text type="secondary">
+                                    <Text className="opacity-80">
                                         {contactInfo.name}
                                     </Text>
                                     <Paragraph

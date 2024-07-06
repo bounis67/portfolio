@@ -60,6 +60,7 @@ export const NavBar = ({ mainDivWidth }: { mainDivWidth: number }) => {
                     return (
                         <Button
                             key={nav.key}
+                            aria-label="nav-bar-button"
                             onClick={() => {
                                 if (mainDivWidth <= 1024) {
                                     setIsOpen(false);

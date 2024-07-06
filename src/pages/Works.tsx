@@ -49,7 +49,7 @@ export const Works = () => {
             className="flex flex-col gap-5"
             variants={container}
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
         >
             <motion.div variants={item}>
                 <Title>My Works</Title>
@@ -68,7 +68,7 @@ export const Works = () => {
                             initial="hidden"
                             whileInView="visible"
                             exit="hidden"
-                            className="w-full xl:w-[45%] 2xl:w-[30%]"
+                            className="w-full cursor-pointer xl:w-[45%] 2xl:w-[30%]"
                         >
                             <Card
                                 cover={<img alt={work.title} src={work.img} />}

@@ -25,7 +25,6 @@ export const About = () => {
                 className="flex flex-col items-center gap-5 sm:items-start"
                 variants={container}
                 initial="hidden"
-                // animate="visible"
                 whileInView={"visible"}
                 exit="hidden"
             >

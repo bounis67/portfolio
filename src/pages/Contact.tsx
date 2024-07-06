@@ -23,7 +23,7 @@ export const Contact: React.FC = () => (
         className="flex flex-col gap-4"
         variants={container}
         initial="hidden"
-        animate="visible"
+        whileInView="visible"
     >
         <div>
             <motion.div variants={item}>

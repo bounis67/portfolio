@@ -24,7 +24,7 @@ export const Skills = () => {
             className="flex flex-col justify-center gap-5 p-4"
             variants={container}
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
         >
             <motion.div variants={item}>
                 <Title className="flex items-center gap-3">

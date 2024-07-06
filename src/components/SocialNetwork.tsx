@@ -16,6 +16,7 @@ export const SocialNetwork = () => {
                             size={"large"}
                             href={socialNetwork.url}
                             target="_blank"
+                            aria-label={socialNetwork.name}
                         />
                     </Tooltip>
                     {socialNetworks.length !== socialNetwork.key && (
