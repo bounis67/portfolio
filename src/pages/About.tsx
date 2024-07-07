@@ -18,7 +18,7 @@ const item = {
     visible: { opacity: 1, y: 0 },
 };
 
-export const About = () => {
+export default function About() {
     return (
         <AnimatePresence>
             <motion.div
@@ -98,4 +98,4 @@ export const About = () => {
             </motion.div>
         </AnimatePresence>
     );
-};
+}

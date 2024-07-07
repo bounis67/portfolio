@@ -21,7 +21,7 @@ const item = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
 };
-export const Works = () => {
+export default function Works() {
     const [filter, setFilter] = useState<string>("all");
     const [dataFilter, setDataFilter] = useState<WorksType[]>(worksData);
 
@@ -96,4 +96,4 @@ export const Works = () => {
             </motion.div>
         </motion.div>
     );
-};
+}

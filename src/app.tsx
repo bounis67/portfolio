@@ -1,11 +1,12 @@
-import { About } from "./pages/About";
-import { Contact } from "./pages/Contact";
 import { MainLayout } from "./pages/MainLayout";
-import { Skills } from "./pages/Skills";
-import { Works } from "./pages/Works";
 import { Spin } from "antd";
-import { useState, useEffect } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+const Skills = lazy(() => import("./pages/Skills"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Works = lazy(() => import("./pages/Works"));
+const About = lazy(() => import("./pages/About"));
 
 export const App = () => {
     const [loading, setLoading] = useState(true);
@@ -13,17 +14,20 @@ export const App = () => {
     useEffect(() => {
         // callback function to call when event triggers
         const onPageLoad = () => {
-            console.log("page loaded");
             setLoading(false);
         };
 
-        // Check if the page has already loaded
-        if (document.readyState === "complete") {
+        // Check if the DOM has already been loaded
+        if (
+            document.readyState === "complete" ||
+            document.readyState === "interactive"
+        ) {
             onPageLoad();
         } else {
-            window.addEventListener("load", onPageLoad, false);
-            // Remove the event listener when component unmounts
-            return () => window.removeEventListener("load", onPageLoad);
+            document.addEventListener("DOMContentLoaded", onPageLoad);
+            // Remove event listener on cleanup
+            return () =>
+                document.removeEventListener("DOMContentLoaded", onPageLoad);
         }
     }, []);
 
@@ -37,14 +41,24 @@ export const App = () => {
 
     return (
         <BrowserRouter>
-            <Routes>
-                <Route path="*" element={<MainLayout />}>
-                    <Route path="skills" element={<Skills />} />
-                    <Route path="contact" element={<Contact />} />
-                    <Route path="works" element={<Works />} />
-                    <Route path="*" element={<About />} />
-                </Route>
-            </Routes>
+            <Suspense
+                fallback={
+                    <div className="flex h-screen w-screen items-center justify-center">
+                        <Spin />
+                    </div>
+                }
+            >
+                <Routes>
+                    <Route path="*" element={<MainLayout />}>
+                        <Route path="skills" element={<Skills />} />
+                        <Route path="contact" element={<Contact />} />
+                        <Route path="works" element={<Works />} />
+                        <Route path="*" element={<About />} />
+                    </Route>
+                </Routes>
+            </Suspense>
         </BrowserRouter>
     );
 };
+
+export default App;

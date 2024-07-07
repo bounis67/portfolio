@@ -18,7 +18,7 @@ const item = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
 };
-export const Skills = () => {
+export default function Skills() {
     return (
         <motion.div
             className="flex flex-col justify-center gap-5 p-4"
@@ -86,4 +86,4 @@ export const Skills = () => {
             </div>
         </motion.div>
     );
-};
+}
