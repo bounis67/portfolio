@@ -12,7 +12,7 @@ import { SassIcon } from "../assets/icon/SassIcon";
 import { TailwindIcon } from "../assets/icon/TailwindIcon";
 import { TypescriptIcon } from "../assets/icon/TypescriptIcon";
 
-interface Skill {
+export interface SkillType {
     id: number;
     category: string;
     skills: {
@@ -21,7 +21,7 @@ interface Skill {
     }[];
 }
 
-export const SkillsData: Skill[] = [
+export const SkillsData: SkillType[] = [
     {
         id: 1,
         category: "General",

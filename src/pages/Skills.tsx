@@ -1,5 +1,5 @@
+import SkillsCategory from "../components/SkillsCategory";
 import { SkillsData } from "../data/SkillsData";
-import { Card } from "antd";
 import { Typography } from "antd";
 import { motion } from "framer-motion";
 
@@ -56,26 +56,12 @@ export default function Skills() {
                 </motion.div>
                 <div className="flex flex-col justify-around gap-10">
                     {SkillsData.map((category) => (
-                        <motion.div
-                            className="flex flex-col justify-center gap-2"
+                        <SkillsCategory
                             key={category.id}
-                            variants={container}
-                        >
-                            <motion.div variants={item}>
-                                <Title level={2} className="">
-                                    {category.category}
-                                </Title>
-                            </motion.div>
-                            <div className="flex flex-wrap items-center gap-3">
-                                {category.skills.map((skills) => (
-                                    <motion.div key={skills.id} variants={item}>
-                                        <Card className="flex h-[100px] w-[100px] items-center justify-center sm:h-28 sm:w-28">
-                                            <div>{skills.icon}</div>
-                                        </Card>
-                                    </motion.div>
-                                ))}
-                            </div>
-                        </motion.div>
+                            category={category}
+                            containerVariants={container}
+                            itemVariants={item}
+                        />
                     ))}
                 </div>
             </div>
