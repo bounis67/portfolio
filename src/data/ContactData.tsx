@@ -12,18 +12,18 @@ export const contactData: ContactData[] = [
         label: "Email",
         name: "email",
         rules: [{ required: true, message: "Please enter the email" }],
-        component: <Input />,
+        component: <Input disabled={true} />,
     },
     {
         label: "Object",
         name: "object",
         rules: [{ required: true }],
-        component: <Input />,
+        component: <Input disabled={true} />,
     },
     {
         label: "Message",
         name: "message",
         rules: [{ required: true }],
-        component: <Input.TextArea />,
+        component: <Input.TextArea disabled={true} />,
     },
 ];

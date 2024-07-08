@@ -1,6 +1,7 @@
 import { contactData } from "../data/ContactData";
 import { Button, Typography } from "antd";
 import { motion } from "framer-motion";
+import { FileWarning } from "lucide-react";
 
 const { Title, Text } = Typography;
 
@@ -26,25 +27,34 @@ export default function Contact() {
             whileInView="visible"
         >
             <div>
+                <p className="mb-5 text-lg !text-red-600">
+                    <FileWarning color="#dc2626" className="inline" /> Ce
+                    formulaire n'est actuellement pas fonctionnel. Merci de
+                    m'envoyer un mail par vos propres moyens.
+                    <FileWarning color="#dc2626" className="inline" />
+                </p>
                 <motion.div variants={item}>
-                    <Title>Contact Me</Title>
+                    <Title level={2}>Me contacter</Title>
                 </motion.div>
                 <motion.div variants={item}>
                     <Text>
-                        You can contact me about anything, and I'll get back to
-                        you as soon as possible. Suggestions are also welcome.
+                        Vous pouvez me contacter pour n'importe quoi, et je vous
+                        répondrai dès que possible. Les suggestions sont
+                        également les bienvenues.
                     </Text>
                 </motion.div>
             </div>
             <div className="flex w-full flex-col gap-3">
                 {contactData.map((data) => (
                     <motion.div key={data.name} variants={item}>
-                        <label htmlFor={data.name}>{data.label}:</label>
+                        <label htmlFor={data.name}>{data.label} :</label>
                         {data.component}
                     </motion.div>
                 ))}
                 <motion.div variants={item}>
-                    <Button type="primary">Send</Button>
+                    <Button type="primary" disabled={true}>
+                        Envoyer
+                    </Button>
                 </motion.div>
             </div>
         </motion.div>
