@@ -1,12 +1,11 @@
-import { MainLayout } from "./pages/MainLayout";
+import { MainLayout } from "./layout/MainLayout";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Skills from "./pages/Skills";
+import Works from "./pages/Works";
 import { Spin } from "antd";
-import { useState, useEffect, lazy, Suspense } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-const Skills = lazy(() => import("./pages/Skills"));
-const Contact = lazy(() => import("./pages/Contact"));
-const Works = lazy(() => import("./pages/Works"));
-const About = lazy(() => import("./pages/About"));
 
 export const App = () => {
     const [loading, setLoading] = useState(true);
