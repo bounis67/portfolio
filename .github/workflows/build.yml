@@ -1,32 +1,35 @@
-# .github/workflows/verify.yml
-name: Verify and Dev
+name: Build and Deploy
 
 on:
     push:
         branches:
-            - release
+            - main
     pull_request:
         branches:
-            - release
+            - main
 
 jobs:
-    verify_and_dev:
+    build:
         runs-on: ubuntu-latest
 
         steps:
-            - name: Checkout repository
-              uses: actions/checkout@v3
+            - name: Checkout code
+              uses: actions/checkout@v2
 
             - name: Set up Node.js
               uses: actions/setup-node@v3
               with:
                   node-version: "18"
 
-            - name: Install
-              run: npm install
-
-            - name: Verify
-              run: npm run verify
-
-            - name: Build
-              run: npm run build
+            - name: Deploy
+              uses: appleboy/ssh-action@master
+              with:
+                  host: ${{ secrets.HOST }}
+                  username: ${{ secrets.USERNAME }}
+                  password: ${{ secrets.PASSWORD }}
+                  script: |
+                      cd ${{ secrets.DIRECTORY_PATH }}
+                      sudo git pull 
+                      sudo npm install 
+                      sudo rm -rf dist/* 
+                      sudo npm run build
