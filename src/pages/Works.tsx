@@ -1,9 +1,10 @@
+import WorkCard from "../components/WorkCard";
 import { FilterData, worksData, WorksType } from "../data/WorksData";
-import { Card, Segmented, Tag, Typography } from "antd";
+import { Segmented, Typography } from "antd";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-const { Title, Text } = Typography;
+const { Title } = Typography;
 const AnimationCard = {
     hidden: { opacity: 0, scale: 0.5 },
     visible: { opacity: 1, scale: 1 },
@@ -65,35 +66,11 @@ export default function Works() {
             >
                 <AnimatePresence>
                     {dataFilter.map((work) => (
-                        <motion.div
+                        <WorkCard
                             key={work.id}
-                            variants={AnimationCard}
-                            initial="hidden"
-                            whileInView="visible"
-                            exit="hidden"
-                            className="w-full cursor-pointer xl:w-[45%] 2xl:w-[30%]"
-                        >
-                            <Card
-                                cover={<img alt={work.title} src={work.img} />}
-                            >
-                                <div className="flex flex-col gap-2">
-                                    <Title level={4}>{work.title}</Title>
-                                    <Text>{work.description}</Text>
-                                    <div className="flex flex-wrap gap-2">
-                                        {work.tags.map((tag) => (
-                                            <Tag key={tag}>{tag}</Tag>
-                                        ))}
-                                    </div>
-                                    <a
-                                        href={work.url}
-                                        target="_blank"
-                                        rel="noreferrer"
-                                    >
-                                        <Text underline>{work.url}</Text>
-                                    </a>
-                                </div>
-                            </Card>
-                        </motion.div>
+                            work={work}
+                            AnimationCard={AnimationCard}
+                        />
                     ))}
                 </AnimatePresence>
             </motion.div>
