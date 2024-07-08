@@ -1,4 +1,4 @@
-import { NavBars } from "../data/NavBars";
+import { NavBars } from "../data/NavBarsData";
 import { Button, FloatButton } from "antd";
 import { motion } from "framer-motion";
 import { SquareMenu, SquareX } from "lucide-react";
@@ -68,12 +68,12 @@ export const NavBar = ({ mainDivWidth }: { mainDivWidth: number }) => {
 
                                 navigation(nav.link);
                             }}
-                            className="h-max hover:!bg-[#1677ff] hover:!text-white"
+                            className="h-max p-3 hover:!bg-[#1677ff] hover:!text-white"
                             type={IsLocation ? "primary" : "default"}
                         >
                             <div className="flex flex-col items-center justify-center">
                                 {nav.icon}
-                                <p className={`text-lg`}>{nav.name}</p>
+                                <p className="">{nav.name}</p>
                             </div>
                         </Button>
                     );

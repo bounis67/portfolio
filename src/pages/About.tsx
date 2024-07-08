@@ -30,7 +30,7 @@ export default function About() {
             >
                 <motion.div variants={item}>
                     <Title className="flex items-center gap-3">
-                        Hello
+                        Bonjour
                         <img
                             src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44b/512.gif"
                             alt="👋"
@@ -42,11 +42,11 @@ export default function About() {
                 </motion.div>
                 <motion.div variants={item}>
                     <Paragraph className="text-center text-xl sm:text-start">
-                        I'm Corentin, a developer passionate about creating all
-                        kinds of websites. Since a young age, I've always had a
-                        great interest in computers and the web. I started
-                        creating websites in 6th grade, and yes, that was a long
-                        time ago!
+                        Je suis Corentin, un développeur passionné par la
+                        création de toutes sortes de sites web. Depuis mon plus
+                        jeune âge, j'ai toujours eu un grand intérêt pour les
+                        ordinateurs et le web. J'ai commencé à créer des sites
+                        web en 6ème année, et oui, c'était il y a longtemps !
                         <img
                             src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f605/512.gif"
                             alt="😅"
@@ -58,8 +58,8 @@ export default function About() {
                 </motion.div>
                 <motion.div variants={item}>
                     <Paragraph className="text-center text-xl sm:text-start">
-                        For the past year, I've been working on improving my
-                        skills
+                        L'année dernière, j'ai travaillé dur pour améliorer mes
+                        compétences
                         <img
                             src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f4aa/512.gif"
                             alt="💪"
@@ -67,10 +67,10 @@ export default function About() {
                             height="20"
                             className="mx-1 inline"
                         />
-                        with the goal of starting freelancing. I'm currently in
-                        my final year of high school and plan to continue my
-                        studies with a Bachelor's degree in Computer Science
-                        next year, and maybe even a Master's degree.
+                        afin de commencer à travailler en freelance. Je suis
+                        actuellement en dernière année de lycée et je prévois de
+                        continuer mes études avec une licence en informatique
+                        l'année prochaine, et peut-être même un master.
                         <img
                             src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f914/512.gif"
                             alt="🤔"
@@ -78,13 +78,12 @@ export default function About() {
                             height="20"
                             className="mx-1 inline"
                         />
-                        Alongside that, I want to do freelancing to finance my
-                        studies.
+                        Parallèlement, je souhaite faire du freelance...
                     </Paragraph>
                 </motion.div>
                 <motion.div variants={item}>
                     <Title level={2} className="flex items-center">
-                        What I Do{" "}
+                        Ce que je fais
                         <img
                             src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f4aa/512.gif"
                             alt="💪"

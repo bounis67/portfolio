@@ -1,4 +1,4 @@
-import { backgroundColorData } from "../data/BackgroundColorData";
+import { backgroundColorData } from "./../data/BackgroundColorData";
 import { motion } from "framer-motion";
 
 export const BackgroundColor = () => {

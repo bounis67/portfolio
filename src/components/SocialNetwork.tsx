@@ -1,4 +1,4 @@
-import { socialNetworks } from "../data/socialNetworks";
+import { socialNetworks } from "../data/socialNetworksData";
 import { Button, Divider, Tooltip } from "antd";
 
 export const SocialNetwork = () => {

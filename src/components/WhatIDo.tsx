@@ -1,4 +1,4 @@
-import { WhatIDoData } from "../data/WhatIDoData";
+import { WhatIDoData } from "./../data/WhatIDoData";
 import InfoCard from "./InfoCard";
 import { motion, Variants } from "framer-motion";
 

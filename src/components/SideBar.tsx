@@ -22,10 +22,10 @@ export const SideBar = () => {
             </div>
 
             <Title level={2} className="!my-0">
-                John Doe
+                Boehm Corentin
             </Title>
             <Title level={3} className="!my-0">
-                Software Developer
+                Developper Fullstack
             </Title>
             <SocialNetwork />
             <ContactInfo />

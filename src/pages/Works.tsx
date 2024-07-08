@@ -52,14 +52,17 @@ export default function Works() {
             whileInView="visible"
         >
             <motion.div variants={item}>
-                <Title>My Works</Title>
+                <Title>Mes Réalisations</Title>
             </motion.div>
             <motion.div variants={item}>
                 <div className="overflow-x-scroll md:overflow-hidden">
                     <Segmented options={options} onChange={handleFilter} />
                 </div>
             </motion.div>
-            <motion.div className="flex flex-wrap gap-4" variants={item}>
+            <motion.div
+                className="flex flex-wrap justify-center gap-4"
+                variants={item}
+            >
                 <AnimatePresence>
                     {dataFilter.map((work) => (
                         <motion.div

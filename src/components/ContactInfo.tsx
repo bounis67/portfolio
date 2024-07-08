@@ -1,4 +1,4 @@
-import { contactInfos } from "../data/ContactInfos";
+import { contactInfos } from "./../data/ContactInfos";
 import { Button, Card, Divider, Tooltip, Typography, message } from "antd";
 import { useState } from "react";
 

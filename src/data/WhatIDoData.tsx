@@ -8,27 +8,27 @@ type WhatIDoType = {
 
 export const WhatIDoData: WhatIDoType[] = [
     {
-        title: "Web Development",
+        title: "Développement Web",
         description:
-            "I specialize in building responsive and user-friendly web applications using modern technologies like React and TypeScript.",
+            "Je me spécialise dans la création d'applications web réactives et conviviales en utilisant des technologies modernes comme React et TypeScript.",
         icon: <CodeXml size={50} />,
     },
     {
-        title: "UI/UX Design",
+        title: "Design UI/UX",
         description:
-            "I have a keen eye for design and can create visually appealing user interfaces that enhance the overall user experience.",
+            "J'ai un œil aiguisé pour le design et je peux créer des interfaces utilisateur visuellement attrayantes qui améliorent l'expérience utilisateur globale.",
         icon: <AppWindowMac size={50} />,
     },
     {
-        title: "Backend Development",
+        title: "Développement Backend",
         description:
-            "I have experience in developing robust and scalable backend systems using frameworks like Node.js and Express.",
+            "J'ai de l'expérience dans le développement de systèmes backend robustes et évolutifs en utilisant des frameworks comme Node.js et Express. Je suis également familier avec AdonisJs.",
         icon: <Binary size={50} />,
     },
     {
-        title: "Database Management",
+        title: "Gestion de Base de Données",
         description:
-            "I am proficient in working with databases like MySQL and MongoDB, ensuring efficient data storage and retrieval.",
+            "Je suis compétent dans le travail avec des bases de données comme PostgreSQL, assurant un stockage et une récupération des données efficaces.",
         icon: <DatabaseZap size={50} />,
     },
 ];

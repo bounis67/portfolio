@@ -1,5 +1,5 @@
 import { SkillsData } from "../data/SkillsData";
-import { Card, Divider } from "antd";
+import { Card } from "antd";
 import { Typography } from "antd";
 import { motion } from "framer-motion";
 
@@ -28,7 +28,7 @@ export default function Skills() {
         >
             <motion.div variants={item}>
                 <Title className="flex items-center gap-3">
-                    Skills
+                    Mes compétences
                     <picture>
                         <source
                             srcSet="https://fonts.gstatic.com/s/e/notoemoji/latest/1f4aa/512.webp"
@@ -46,14 +46,15 @@ export default function Skills() {
             <div className="flex flex-col gap-10">
                 <motion.div variants={item}>
                     <Text className="text-center text-lg">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Consectetur aliquam atque explicabo optio illo corporis
-                        quod ducimus vel dolores fugiat odit aliquid sed,
-                        assumenda ratione architecto possimus enim veritatis
-                        accusamus!
+                        Au cours de mon parcours, j'ai acquis des compétences
+                        dans la plupart des technologies grâce à ma grande
+                        curiosité et mon envie d'apprendre. J'ai donc pu choisir
+                        les technologies que j'allais approfondir pour en avoir
+                        une bonne maîtrise, suivants certain critères :
+                        rapidité, simplicité, modularité, performance.
                     </Text>
                 </motion.div>
-                <div className="flex flex-col justify-around gap-5">
+                <div className="flex flex-col justify-around gap-10">
                     {SkillsData.map((category) => (
                         <motion.div
                             className="flex flex-col justify-center gap-2"
@@ -68,14 +69,8 @@ export default function Skills() {
                             <div className="flex flex-wrap items-center gap-3">
                                 {category.skills.map((skills) => (
                                     <motion.div key={skills.id} variants={item}>
-                                        <Card>
-                                            <div className="flex flex-col items-center">
-                                                {skills.icon}
-                                                <Divider />
-                                                <Text className="text-center text-lg">
-                                                    {skills.name}
-                                                </Text>
-                                            </div>
+                                        <Card className="flex h-[100px] w-[100px] items-center justify-center sm:h-28 sm:w-28">
+                                            <div>{skills.icon}</div>
                                         </Card>
                                     </motion.div>
                                 ))}
