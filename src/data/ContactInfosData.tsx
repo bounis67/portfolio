@@ -21,13 +21,13 @@ export const contactInfos: ContactInfoType[] = [
         value: "bounis67",
     },
     {
-        key: 2,
+        key: 3,
         name: "Address",
         icon: <MapPinned strokeWidth={3} size={20} />,
         value: "France, Strasbourg",
     },
     {
-        key: 3,
+        key: 4,
         name: "Birthday",
         icon: <Calendar />,
         value: "12/12/2005",
