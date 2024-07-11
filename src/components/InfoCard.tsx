@@ -1,4 +1,4 @@
-import { Card, Divider, Typography } from "antd";
+import { Typography } from "antd";
 import { motion, Variants } from "framer-motion";
 import React from "react";
 
