@@ -39,3 +39,4 @@ jobs:
                       sudo git pull 
                       sudo npm install 
                       sudo rm -rf dist/*
+                      sudo npm run build
