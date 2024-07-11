@@ -50,7 +50,7 @@ export const NavBar = ({ mainDivWidth }: { mainDivWidth: number }) => {
                 />
             )}
             <motion.nav
-                className={`z-20 flex w-max flex-col gap-5 overflow-hidden rounded-xl bg-white p-4 ${mainDivWidth <= 1024 ? "fixed right-7 top-16 shadow-2xl" : ""}`}
+                className={`z-20 flex w-max flex-col gap-5 overflow-hidden rounded-xl bg-white !bg-opacity-80 p-4 ${mainDivWidth <= 1024 ? "fixed right-7 top-16 shadow-2xl" : ""}`}
                 variants={AnimationNav}
                 initial="hidden"
                 animate={IsOpen ? "visible" : "hidden"}
@@ -69,7 +69,7 @@ export const NavBar = ({ mainDivWidth }: { mainDivWidth: number }) => {
                                 navigation(nav.link);
                             }}
                             className="h-max p-3 hover:!bg-[#1677ff] hover:!text-white"
-                            type={IsLocation ? "primary" : "default"}
+                            type={IsLocation ? "primary" : "text"}
                         >
                             <div className="flex flex-col items-center justify-center">
                                 {nav.icon}

@@ -8,7 +8,7 @@ interface WhatIDoProps {
 
 export const WhatIDo = ({ variants }: WhatIDoProps) => {
     return (
-        <motion.div className="flex flex-col gap-4" variants={variants}>
+        <motion.div className="flex flex-col gap-10" variants={variants}>
             {WhatIDoData.map((data, index) => (
                 <InfoCard
                     variants={variants}

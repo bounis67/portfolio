@@ -21,10 +21,10 @@ const InfoCard: React.FC<InfoCardProps> = ({
 }) => {
     return (
         <motion.div variants={variants}>
-            <Card key={key}>
-                <div className="flex flex-col items-center gap-5 sm:flex-row">
-                    <div className="p-">{icon}</div>
-                    <Divider type="vertical" />
+            <div className="p-4" key={key}>
+                <div className="flex flex-col items-stretch gap-5 sm:flex-row">
+                    <div className="pr-10">{icon}</div>
+                    {/* <Divider type="vertical" /> */}
                     <div>
                         <Title level={3} className="text-center sm:text-start">
                             {title}
@@ -34,7 +34,7 @@ const InfoCard: React.FC<InfoCardProps> = ({
                         </Paragraph>
                     </div>
                 </div>
-            </Card>
+            </div>
         </motion.div>
     );
 };

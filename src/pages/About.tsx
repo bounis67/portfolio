@@ -22,14 +22,14 @@ export default function About() {
     return (
         <AnimatePresence>
             <motion.div
-                className="flex flex-col items-center gap-5 sm:items-start"
+                className="flex flex-col items-center gap-10 sm:items-start"
                 variants={container}
                 initial="hidden"
                 whileInView={"visible"}
                 exit="hidden"
             >
                 <motion.div variants={item}>
-                    <Title className="flex items-center gap-3">
+                    <Title className="!mb-0 flex items-center gap-3">
                         Bonjour
                         <img
                             src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44b/512.gif"

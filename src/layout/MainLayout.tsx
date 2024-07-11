@@ -46,7 +46,7 @@ export const MainLayout = () => {
                         <SideBar />
                     )}
                     <main
-                        className="w-11/12 overflow-hidden rounded-xl bg-white p-10 transition-all lg:w-3/6"
+                        className="w-11/12 overflow-hidden rounded-xl bg-white !bg-opacity-80 p-16 transition-all lg:w-3/6"
                         style={{ zIndex: "inherit" }}
                     >
                         <Outlet />

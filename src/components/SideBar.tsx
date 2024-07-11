@@ -9,7 +9,7 @@ const { Title } = Typography;
 export const SideBar = () => {
     return (
         <div
-            className="flex w-11/12 flex-col items-center gap-4 rounded-xl bg-white p-7 md:p-16 lg:w-[350px] lg:p-10"
+            className="flex w-11/12 flex-col items-center gap-4 rounded-xl bg-white !bg-opacity-80 p-7 md:p-16 lg:w-[350px] lg:p-10"
             style={{ zIndex: "inherit" }}
         >
             <div className="flex items-center">

@@ -12,8 +12,12 @@ interface SkillCardProps {
 
 const SkillCard: React.FC<SkillCardProps> = ({ skill, itemVariants }) => {
     return (
-        <motion.div key={skill.id} variants={itemVariants}>
-            <Card className="flex h-[100px] w-[100px] items-center justify-center sm:h-28 sm:w-28">
+        <motion.div
+            key={skill.id}
+            variants={itemVariants}
+            className="!bg-opacity-80"
+        >
+            <Card className="flex h-[100px] w-[100px] items-center justify-center !bg-opacity-80 sm:h-28 sm:w-28">
                 <div>{skill.icon}</div>
             </Card>
         </motion.div>
