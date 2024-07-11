@@ -3,11 +3,11 @@ import { motion } from "framer-motion";
 
 export const BackgroundColor = () => {
     return (
-        <div className="z-0 blur-[200px]">
+        <>
             {backgroundColorData.map((bgColor, index) => (
                 <motion.span
                     key={index}
-                    className={`fixed h-[700px] w-[500px] marker:rounded-full ${bgColor.color}`}
+                    className={`fixed h-[700px] w-[500px] marker:rounded-full ${bgColor.color} blur-[200px]`}
                     initial={{ x: 0, y: 0 }}
                     animate={{
                         x: bgColor.animation.x,
@@ -20,6 +20,6 @@ export const BackgroundColor = () => {
                     }}
                 ></motion.span>
             ))}
-        </div>
+        </>
     );
 };
