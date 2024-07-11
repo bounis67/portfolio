@@ -33,7 +33,7 @@ export const MainLayout = () => {
                 theme={{ token: { fontFamily: "SFUIText, sans-serif" } }}
             >
                 <div
-                    className="!z-10 flex h-full min-h-screen w-full flex-col items-center justify-center gap-5 bg-black bg-cover bg-fixed bg-center bg-no-repeat py-[5%] lg:flex-row lg:items-start"
+                    className="!z-10 flex h-full min-h-screen w-full flex-col items-center justify-center gap-5 bg-slate-200 bg-cover bg-fixed bg-center bg-no-repeat py-[5%] lg:flex-row-reverse lg:items-start"
                     ref={ref}
                 >
                     {mainDivWidth >= 1024 ? (

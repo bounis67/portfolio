@@ -1,54 +1,41 @@
+const windowWidth = window.innerWidth - 500;
+const windowHeight = window.innerHeight - 700;
+
 interface backgroundColorType {
     color: string;
     animation: { x: number[]; y: number[] };
 }
-const generateLinearAnimation = () => {
-    const startEndX = Math.random() * 1500;
-    const startEndY = Math.random() * 1000;
-    const animation: { x: number[]; y: number[] } = {
-        x: [startEndX],
-        y: [startEndY],
+
+function generateRandomAnimation(windowWidth: number, windowHeight: number) {
+    return {
+        x: Array.from({ length: 5 }, () => Math.random() * windowWidth),
+        y: Array.from({ length: 5 }, () => Math.random() * windowHeight),
     };
-    let x = startEndX;
-    let y = startEndY;
-
-    for (let i = 0; i < 2; i++) {
-        const direction = Math.random() * 4 - 2;
-        const distributionPx = direction * 100;
-        x += distributionPx;
-        y += distributionPx - 100;
-        animation.x.push(x);
-        animation.y.push(y);
-    }
-    animation.x.push(startEndX);
-    animation.y.push(startEndY);
-
-    return animation;
-};
+}
 
 export const backgroundColorData: backgroundColorType[] = [
     {
         color: "bg-blue-500",
-        animation: generateLinearAnimation(),
+        animation: generateRandomAnimation(windowWidth, windowHeight),
     },
     {
         color: "bg-yellow-500",
-        animation: generateLinearAnimation(),
+        animation: generateRandomAnimation(windowWidth, windowHeight),
     },
     {
         color: "bg-red-500",
-        animation: generateLinearAnimation(),
+        animation: generateRandomAnimation(windowWidth, windowHeight),
     },
     {
         color: "bg-white-500",
-        animation: generateLinearAnimation(),
+        animation: generateRandomAnimation(windowWidth, windowHeight),
     },
     {
         color: "bg-purple-500",
-        animation: generateLinearAnimation(),
+        animation: generateRandomAnimation(windowWidth, windowHeight),
     },
     {
-        color: "bg--500",
-        animation: generateLinearAnimation(),
+        color: "bg-black-500",
+        animation: generateRandomAnimation(windowWidth, windowHeight),
     },
 ];
