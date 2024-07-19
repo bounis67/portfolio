@@ -1,4 +1,4 @@
-import { DiscordIcon } from "../assets/icon/DiscordIcon";
+// import { DiscordIcon } from "../assets/icon/DiscordIcon";
 import { Calendar, Mail, MapPinned } from "lucide-react";
 
 type ContactInfoType = {
