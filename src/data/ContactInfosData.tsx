@@ -14,20 +14,20 @@ export const contactInfos: ContactInfoType[] = [
         icon: <Mail strokeWidth={3} size={20} />,
         value: "boehmcorentin52@gmail.com",
     },
+    // {
+    //     key: 2,
+    //     name: "Discord",
+    //     icon: <DiscordIcon size={20} />,
+    //     value: "bounis67",
+    // },
     {
         key: 2,
-        name: "Discord",
-        icon: <DiscordIcon size={20} />,
-        value: "bounis67",
-    },
-    {
-        key: 3,
         name: "Address",
         icon: <MapPinned strokeWidth={3} size={20} />,
         value: "France, Strasbourg",
     },
     {
-        key: 4,
+        key: 3,
         name: "Birthday",
         icon: <Calendar />,
         value: "12/12/2005",
