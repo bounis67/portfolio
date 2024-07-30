@@ -1,7 +1,7 @@
 import { WorksType } from "../data/WorksData";
-import { Card, Tag, Typography } from "antd";
+import { Card, Modal, Tag, Typography } from "antd";
 import { motion, Variants } from "framer-motion";
-import React from "react";
+import React, { useState } from "react";
 
 const { Title, Text } = Typography;
 
@@ -11,6 +11,16 @@ interface WorkCardProps {
 }
 
 const WorkCard: React.FC<WorkCardProps> = ({ work, AnimationCard }) => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const showModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const handleCancel = () => {
+        setIsModalOpen(false);
+    };
+
     return (
         <motion.div
             key={work.id}
@@ -18,22 +28,36 @@ const WorkCard: React.FC<WorkCardProps> = ({ work, AnimationCard }) => {
             initial="hidden"
             whileInView="visible"
             exit="hidden"
-            className="w-full cursor-pointer xl:w-[45%] 2xl:w-[30%]"
+            className="xl:w-[45%] 2xl:w-[40%]"
         >
-            <Card cover={<img alt={work.title} src={work.img} />}>
-                <div className="flex flex-col gap-2">
+            <Card
+                cover={<img alt={work.title} src={work.img} />}
+                className="cursor-pointer"
+                onClick={showModal}
+            >
+                <div className="flex flex-col gap-3">
                     <Title level={4}>{work.title}</Title>
                     <Text>{work.description}</Text>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-1">
                         {work.tags.map((tag) => (
                             <Tag key={tag}>{tag}</Tag>
                         ))}
                     </div>
-                    <a href={work.url} target="_blank" rel="noreferrer">
-                        <Text underline>{work.url}</Text>
-                    </a>
                 </div>
             </Card>
+            <Modal
+                open={isModalOpen}
+                onCancel={handleCancel}
+                onOk={() => {
+                    window.open(work.url, "_blank");
+                }}
+                okType="primary"
+                okText="Open Project"
+                className="!w-3/4 lg:!w-1/2 2xl:!w-5/12"
+                cancelButtonProps={{ style: { display: "none" } }}
+            >
+                <div>{work.modalContent}</div>
+            </Modal>
         </motion.div>
     );
 };

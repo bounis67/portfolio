@@ -1,4 +1,3 @@
-// import { DiscordIcon } from "../assets/icon/DiscordIcon";
 import { Calendar, Mail, MapPinned } from "lucide-react";
 
 type ContactInfoType = {
@@ -14,12 +13,6 @@ export const contactInfos: ContactInfoType[] = [
         icon: <Mail strokeWidth={3} size={20} />,
         value: "boehmcorentin52@gmail.com",
     },
-    // {
-    //     key: 2,
-    //     name: "Discord",
-    //     icon: <DiscordIcon size={20} />,
-    //     value: "bounis67",
-    // },
     {
         key: 2,
         name: "Address",
