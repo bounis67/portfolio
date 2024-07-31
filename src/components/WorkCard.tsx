@@ -52,7 +52,7 @@ const WorkCard: React.FC<WorkCardProps> = ({ work, AnimationCard }) => {
                     window.open(work.url, "_blank");
                 }}
                 okType="primary"
-                okText="Open Project"
+                okText="Ouvrir le projet"
                 className="!w-3/4 lg:!w-1/2 2xl:!w-5/12"
                 cancelButtonProps={{ style: { display: "none" } }}
             >
