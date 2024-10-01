@@ -47,11 +47,13 @@ export default function Skills() {
                 <motion.div variants={item}>
                     <Text className="text-center text-lg">
                         Au cours de mon parcours, j'ai acquis des compétences
-                        dans la plupart des technologies grâce à ma grande
-                        curiosité et mon envie d'apprendre. J'ai donc pu choisir
-                        les technologies que j'allais approfondir pour en avoir
-                        une bonne maîtrise, suivants certain critères :
-                        rapidité, simplicité, modularité, performance.
+                        dans de nombreuses technologies grâce à ma grande
+                        curiosité et mon envie d'apprendre. J'ai ensuite choisi
+                        d'approfondir certaines technologies ci-dessous pour en avoir
+                        une bonne maîtrise, en me basant sur des critères tels que :
+                        la rapidité, la simplicité, la modularité et la performance.
+                        Ces compétences me permettent de créer des solutions
+                        efficaces et innovantes pour divers projets web.
                     </Text>
                 </motion.div>
                 <div className="flex flex-col justify-around gap-10">

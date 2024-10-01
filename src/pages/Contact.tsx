@@ -1,7 +1,6 @@
 import { contactData } from "../data/ContactData";
 import { Button, Typography } from "antd";
 import { motion } from "framer-motion";
-import { FileWarning } from "lucide-react";
 
 const { Title, Text } = Typography;
 
@@ -28,10 +27,9 @@ export default function Contact() {
         >
             <div>
                 <p className="mb-5 text-lg !text-red-600">
-                    <FileWarning color="#dc2626" className="inline" /> Ce
-                    formulaire n'est actuellement pas fonctionnel. Merci de
+                    Ce formulaire n'est actuellement pas fonctionnel. Merci de
                     m'envoyer un mail par vos propres moyens.
-                    <FileWarning color="#dc2626" className="inline" />
+
                 </p>
                 <motion.div variants={item}>
                     <Title level={2}>Me contacter</Title>
